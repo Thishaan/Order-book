@@ -1,9 +1,8 @@
 What Is an Order?
------------------
+
 An order is an instruction to buy or sell something, like a stock.
 
-Basic Features of an Order:
----------------------------
+the basic features of an Order:
 
 1. ID
    - A unique number that identifies the order.

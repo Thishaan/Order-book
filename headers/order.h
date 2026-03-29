@@ -13,17 +13,18 @@ public:
         Partially_filled
     };
 
-    enum class Type {
+    enum class Order_Type {
         Buy,
         Sell
     };
 
     // Constructor
-    Order(Type type,
+    Order(Order_Type type,
           Status status,
           std::uint64_t order_ID,
           float price,
-          int quantity);
+          int quantity,
+          int filled_quantity);
 
     // Member functions
     void cancelOrder();
@@ -32,10 +33,11 @@ public:
     float getPrice() const;
 
 private:
-    Type type;
+    Order_Type type;
     Status status;
     std::uint64_t order_ID;
     float price;
+    int filled_quantity; // Track filled quantity for partial fills ONLY
     int quantity;
 };
 
