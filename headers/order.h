@@ -27,18 +27,29 @@ public:
           int filled_quantity);
 
     // Member functions
-    void cancelOrder();
-    void updateQuantity(int newQuantity);
+   // void cancelOrder();
+    //void updateQuantity(int newQuantity);
 
-    float getPrice() const;
+    // Getters
+    Order_Type  getType()              const;
+    Status      getStatus()            const;
+    uint64_t    getOrderID()           const;
+    double      getPrice()             const;
+    uint32_t    getQuantity()          const;
+    uint32_t    getFilledQuantity()    const;
+    uint32_t    getRemainingQuantity() const;
+
+    // Actions
+    void fill(uint32_t amount);
+    void cancel();
 
 private:
     Order_Type type;
     Status status;
     std::uint64_t order_ID;
     float price;
-    int filled_quantity; // Track filled quantity for partial fills ONLY
-    int quantity;
+    uint32_t filled_quantity; // Track filled quantity for partial fills ONLY
+    uint32_t quantity;
 };
 
 #endif // ORDER_HPP
