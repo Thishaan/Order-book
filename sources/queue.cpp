@@ -46,4 +46,3 @@ T & ConcurrentQueue<T>::peak() {
     return m_queue.front();
 }
 
-

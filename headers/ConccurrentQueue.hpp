@@ -17,7 +17,6 @@ class ConcurrentQueue{
     T pop(); // returna copy of th frnt element ,removing it from the queue
     void push(const T& item); // jut add it on
     T & peak(); // return a reference to the front 
-    ~ConcurrentQueue(); // destructor
 
 };
 
