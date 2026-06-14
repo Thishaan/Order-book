@@ -1,16 +1,13 @@
 #include "../headers/OrderGenerator.hpp"
 #include <stdint.h>
 #include <ctime>
-
+#include <algorithm>  // for moving
 #include <random> // Include the standard random library
 
 
 template <typename U> 
-OrderGenerate<U>::OrderGenerate(){
-       genRate = 4;
-       orders =  null; 
-
-
+OrderGenerate<U>::OrderGenerate() {
+      // genRate = 4;
 
        for(size_t i=0; i < genRate; i++){
 
@@ -35,14 +32,14 @@ OrderGenerate<U>::OrderGenerate(){
         size_t quantity  = random_value % 50;
         
 
-        Order order_curr(static_cast<Order_Type>(type %2),
+        Order order_curr = new Order(static_cast<Order_Type>(type%2),
           Status::New,
-          dis(gen()),
-          dis_dub(gen_dub())),
+          dis(gen_64()),
+          dis_dub(gen_dub()),
           quantity,
           0);
 
-         
+          orders[i]  = &order_curr;
 
        }
 
