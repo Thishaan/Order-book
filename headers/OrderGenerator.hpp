@@ -19,14 +19,16 @@ class OrderGenerate{
 public:
     OrderGenerate();
 
-    T * orders[genRate];
+    U * orders[genRate];
 
 
 private:
     
-    std::uint32_t genRate{4}; // number of orders per second
+    uint32_t genRate{4}; // number of orders per second
     void setGenRate (uint32_t gen_rate);
     void generateOrders();
+
+    void publish_order();
  
     
 };

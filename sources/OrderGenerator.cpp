@@ -3,10 +3,11 @@
 #include <ctime>
 #include <algorithm>  // for moving
 #include <random> // Include the standard random library
+#include "../headers/Order.h"
 
 
 template <typename U> 
-OrderGenerate<U>::OrderGenerate() {
+void OrderGenerate<U>::generateOrders() {
       // genRate = 4;
 
        for(size_t i=0; i < genRate; i++){
@@ -27,7 +28,6 @@ OrderGenerate<U>::OrderGenerate() {
   
         int random_value = std::rand();
         int type  = std::rand();
-        //int status  = std::rand();
 
         size_t quantity  = random_value % 50;
         
