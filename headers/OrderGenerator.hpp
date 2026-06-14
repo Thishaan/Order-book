@@ -1,3 +1,7 @@
+
+ #include <stdint.h>
+
+
 /**
  * 
  * OrderGenerator class
@@ -8,19 +12,20 @@
  */
 
 
-
-
-template <typename T>
+template <typename U>
 class OrderGenerate{
 
 
 public:
     OrderGenerate();
 
+    T orders[genRate];
+
+
 private:
     
     std::uint32_t genRate; // number of orders per second
-    void setGenRate () const;
+    void setGenRate (uint32_t gen_rate);
     void generateOrders() const;
  
     

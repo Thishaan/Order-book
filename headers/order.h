@@ -2,7 +2,7 @@
 #define ORDER_HPP
 
 #include <cstdint>
-
+#include <chrono>
 class Order {
 public:
     // Enums must be declared *inside* the class, not as "class enum"
@@ -22,12 +22,12 @@ public:
     Order(Order_Type type,
           Status status,
           std::uint64_t order_ID,
-          float price,
+          double price,
           int quantity,
           int filled_quantity);
 
     // Member functions
-   // void cancelOrder();
+    // void cancelOrder();
     //void updateQuantity(int newQuantity);
 
     // Getters
@@ -47,9 +47,11 @@ private:
     Order_Type type;
     Status status;
     std::uint64_t order_ID;
-    float price;
+    double price;
     uint32_t filled_quantity; // Track filled quantity for partial fills ONLY
     uint32_t quantity;
+    std::chrono::time_point<std::chrono::steady_clock> timestamp;  // for priority
+
 };
 
 #endif // ORDER_HPP
